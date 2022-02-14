@@ -13,7 +13,7 @@ variable "vpc_cidr_block" {
   default     = "10.0.0.0/16"
 }
 
-// This is variable holds the
+// This variable holds the
 // number of public and private subnets
 variable "subnet_count" {
   description = "Number of subnets"
@@ -80,7 +80,7 @@ variable "private_subnet_cidr_blocks" {
 // web security group
 variable "my_ip" {
   description = "Your IP address"
-  default     = "x.x.x.x" // change this to your actual IP
+  type        = string
   sensitive   = true
 }
 
