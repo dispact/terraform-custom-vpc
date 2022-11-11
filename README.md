@@ -22,5 +22,8 @@ Run the command: `terraform init`
 ### Apply the Terraform Config to AWS
 Run the command: `terraform apply -var-file="secrets.tfvars"`
 
+## Check Database Conncetion
+mysql -h mysql–instance1.123456789012.us-east-1.rds.amazonaws.com -P 3306 -u mymasteruser -p
+
 ### To destroy everything that was created by the Terraform Config
 Run the command: `terraform destroy -var-file="secrets.tfvars"`
