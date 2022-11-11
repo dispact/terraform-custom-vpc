@@ -22,5 +22,8 @@ Run the command: `terraform init`
 ### Apply the Terraform Config to AWS
 Run the command: `terraform apply -var-file="secrets.tfvars"`
 
+### Test SSH connection
+ssh -i "tutorial_kp" ubuntu@$(terraform output -raw web_public_dns)
+
 ### To destroy everything that was created by the Terraform Config
 Run the command: `terraform destroy -var-file="secrets.tfvars"`
