@@ -2,7 +2,7 @@
 // AWS region that everything will be
 // created in
 variable "aws_region" {
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 // This variable is to set the

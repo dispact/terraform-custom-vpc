@@ -6,12 +6,12 @@ terraform {
     // is aws, and we want version 4.0.0
     aws = {
       source  = "hashicorp/aws"
-      version = "4.0.0"
+      version = "5.39.1"
     }
   }
 
   // This is the required version of Terraform
-  required_version = "~> 1.1.5"
+  required_version = "~> 1.7.4"
 }
 
 // Here we are configuring our aws provider. 
@@ -344,7 +344,7 @@ resource "aws_key_pair" "main_kp" {
   // from a specific path. Since the public key
   // was created in the same directory as main.tf
   // we can just put the name
-  public_key = file("main_kp.pub")
+  public_key = file("tf_kp.pub")
 }
 
 // Create an EC2 instance named "main_web"
@@ -399,8 +399,8 @@ resource "aws_eip" "main_web_eip" {
   instance = aws_instance.main_web[count.index].id
 
 	// We want the Elastic IP to be in the VPC
-  domain      = vpc
-
+  domain      = "vpc"
+  
 	// Here we are tagging the Elastic IP with the name
 	// "main_web_eip_" followed by the count index
   tags = {
