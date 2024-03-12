@@ -399,7 +399,7 @@ resource "aws_eip" "main_web_eip" {
   instance = aws_instance.main_web[count.index].id
 
 	// We want the Elastic IP to be in the VPC
-  vpc      = true
+  domain      = vpc
 
 	// Here we are tagging the Elastic IP with the name
 	// "main_web_eip_" followed by the count index
